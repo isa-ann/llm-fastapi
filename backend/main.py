@@ -21,7 +21,8 @@ def read_root():
 @app.post("/get_gemini_completion")
 async def get_gemini_completion(
                             gemini_api_key: str =Form(...),
-                            prompt: str = Form(...),  
+                            prompt: str = Form(...), 
+                            system: str = Form(...) 
                         ):
     try:
         genai.configure(api_key = gemini_api_key)
